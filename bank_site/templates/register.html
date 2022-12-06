@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      :root {
+        --primary-color: 200, 100%, 50%;
+        --primary-dark: 200, 100%, 6%;
+        --primary-light: 200, 100%, 91%;
+      }
+      .container {
+        background-image: url("https://cdn.pixabay.com/photo/2020/02/18/08/35/finance-4858797_1280.jpg");
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+      }
+      .form-background {
+        padding: 40px 40px;
+        background-color: hsl(var(--primary-dark), 0.7);
+        width: 80%;
+        max-width: 550px;
+        box-shadow: 0 0 15px 0 hsl(var(--primary-dark));
+        border-radius: 10px;
+        color: hsl(0, 0%, 87%);
+      }
+      .input-group {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+      }
+      .form {
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .register-title {
+        text-align: center;
+        font-weight: normal;
+      }
+      .input {
+        background-color: hsl(var(--primary-light), 0.3);
+        padding: 8px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        color: hsl(0, 0%, 87%);
+        font-size: 1.1rem;
+        cursor: pointer;
+      }
+      .input:focus,
+      .input:hover {
+        outline: 2px solid hsl(var(--primary-color), 0.8);
+      }
+      .btn-submit {
+        background-color: hsl(var(--primary-color), 0.2);
+        outline: none;
+        border: none;
+        padding: 8px 0;
+        margin-top: 15px;
+        border-radius: 5px;
+        font-size: 1.1rem;
+        color: hsl(0, 0%, 67%);
+        cursor: pointer;
+      }
+      .btn-submit:hover,
+      .btn-submit:focus {
+        background-color: hsl(var(--primary-color), 0.3);
+        color: hsl(0, 0%, 87%);
+      }
+      .form-label {
+        color: hsl(0, 0%, 67%);
+      }
+
+      .error-msg {
+        color: hsl(0, 100%, 50%, 0.6);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-background">
+        <h1 class="register-title">Register</h1>
+        <form action="" class="form" method="post">
+          {% csrf_token %}
+          <div class="input-group">
+            <label class="form-label">User Name</label>
+            <input type="text" name="username" class="input" placeholder="" />
+          </div>
+          <div class="input-group">
+            <label class="form-label">Password</label>
+            <input
+              type="password"
+              class="input"
+              name="password"
+              placeholder=""
+            />
+          </div>
+          <div class="input-group">
+            <label class="form-label">Confirm Password</label>
+            <input
+              type="password"
+              class="input"
+              name="confirm_password"
+              placeholder=""
+            />
+          </div>
+          {% for msg in messages %}
+          <p class="error-msg">{{msg}}</p>
+          {% endfor %}
+          <button type="submit" class="btn-submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
