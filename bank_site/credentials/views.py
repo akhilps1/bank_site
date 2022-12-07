@@ -34,6 +34,8 @@ def login(request):
         user = auth.authenticate(username=username, password=password)
         if user is not None:
             auth.login(request, user)
+            
+            current_user = request.user
             return redirect('details:detail')
         else:
             messages.info(request, 'invalid credentials')

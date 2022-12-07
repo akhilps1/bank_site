@@ -28,6 +28,7 @@
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
     </head>
     <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
       <div id="overlayer"></div>
       <div class="loader">
         <div class="spinner-border text-primary" role="status">
@@ -54,14 +55,14 @@
             <div class="row align-items-center">
               
               <div class="col-6 col-xl-2">
-                <h1 class="mb-0 site-logo"><a href="index.html" class="h2 mb-0">HooBank<span class="text-primary">.</span> </a></h1>
+                <h1 class="mb-0 site-logo"><a href="{% url 'main:home' %}" class="h2 mb-0">HooBank<span class="text-primary">.</span> </a></h1>
               </div>
     
               <div class="col-12 col-md-10 d-none d-xl-block">
                 <nav class="site-navigation position-relative text-end" role="navigation">
     
                   <ul class="site-menu main-menu js-clone-nav ml-auto d-lg-block">
-                    <li><a href="#home-section" class="nav-link">Home</a></li>
+                    <li><a href="{% url 'main:home' %}" class="nav-link">Home</a></li>
                     <li class="has-children">
                       <a href="" class="nav-link">Branches</a>
                       <ul class="dropdown">
@@ -73,7 +74,7 @@
                         <li><a href="https://en.wikipedia.org/wiki/Kochi" class="nav-link">Kochi</a></li>
                       </ul>
                     </li>
-                    <li> <a href="#about-section" class="nav-link">About Us</a></li>
+                    <li> <a href="{% url 'main:home' %}" class="nav-link">About Us</a></li>
                     {% if user.is_authenticated %}
                     <li><a href="{% url 'details:detail' %}" class="nav-link">My Accout</a></li>
                     <li><a href="{% url 'credentials:logout' %}">Logout</a></li>
@@ -85,8 +86,7 @@
                   </ul>
                 </nav>
               </div>
-    
-    
+
               <div class="col-6 d-inline-block d-xl-none ml-md-0 py-3 text-end" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle float-right"><span class="icon-menu h3"></span></a></div>
     
             </div>
@@ -94,24 +94,38 @@
           
         </header>
 
-        <div class="site-blocks-cover overlay" data-aos="fade" id="home-section">
-
-          
-        </div>  
-       
-                <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
-                <script src="{% static 'js/jquery-ui.js' %}"></script>
-                <script src="{% static 'js/popper.min.js' %}"></script>
-                <script src="{% static 'js/bootstrap.min.js' %}"></script>
-                <script src="{% static 'js/owl.carousel.min.js' %}"></script>
-                <script src="{% static 'js/jquery.countdown.min.js' %}"></script>
-                <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
-                <script src="{% static 'js/aos.js' %}"></script>
-                <script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
-                <script src="{% static 'js/jquery.sticky.js' %}"></script>
-                <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+        <div class="site-blocks-cover overlay"  style="background-image: url('{% static 'images/hero_2.jpg' %}')"  data-aos="fade" id="home-section">
+          <div class="container">
+            <div class="row align-items-center justify-content-center">
               
+              <div class="col-md-10 mt-lg-5 text-center">
+                <div class="single-text owl-carousel">
+                  <div class="slide">
+                    <h1 class="text-uppercase" data-aos="fade-up">OPEN YOUR ACCOUNT</h1>
+                    <p class="mb-5 desc"  data-aos="fade-up" data-aos-delay="100">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae minima delectus accusamus accusantium deleniti libero excepturi porro illo.</p>
+                    <div data-aos="fade-up" data-aos-delay="100">
+                      <a href="{% url 'forms:open_account' %}" target="_blank" class="btn  btn-primary mr-2 mb-2">Open An Account</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+        </div>   
+      </div>
+       <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+       <script src="{% static 'js/jquery-ui.js' %}"></script>
+       <script src="{% static 'js/popper.min.js' %}"></script>
+       <script src="{% static 'js/bootstrap.min.js' %}"></script>
+       <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+       <script src="{% static 'js/jquery.countdown.min.js' %}"></script>
+       <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+       <script src="{% static 'js/aos.js' %}"></script>
+       <script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
+       <script src="{% static 'js/jquery.sticky.js' %}"></script>
+       <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+                 
                 
-                <script src="{% static 'js/main.js' %}"></script>
-    </body>
+       <script src="{% static 'js/main.js' %}"></script>
+  </body>
 </html>

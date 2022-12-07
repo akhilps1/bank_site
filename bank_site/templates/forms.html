@@ -1,0 +1,221 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+
+        <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
+        <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+
+        <link rel="stylesheet" href="{% static 'css/jquery.fancybox.min.css' %}">
+
+        <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+
+        <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
+
+        <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+      <div id="overlayer"></div>
+      <div class="loader">
+        <div class="spinner-border text-primary" role="status">
+          <span class="sr-only"></span>
+        </div>
+      </div>
+    
+    
+      <div class="site-wrap">
+    
+        <div class="site-mobile-menu site-navbar-target">
+          <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close mt-3">
+              <span class="icon-close2 js-menu-toggle"></span>
+            </div>
+          </div>
+          <div class="site-mobile-menu-body"></div>
+        </div>
+       
+        
+        <header class="site-navbar js-sticky-header site-navbar-target bg-light" role="banner">
+    
+          <div class="container">
+            <div class="row align-items-center">
+              
+              <div class="col-6 col-xl-2">
+                <h1 class="mb-0 site-logo"><a href="{% url 'main:home' %}" class="h2 mb-0">HooBank<span class="text-primary">.</span> </a></h1>
+              </div>
+    
+              <div class="col-12 col-md-10 d-none d-xl-block">
+                <nav class="site-navigation position-relative text-end" role="navigation">
+    
+                  <ul class="site-menu main-menu js-clone-nav ml-auto d-lg-block">
+                    <li><a href="{% url 'main:home' %}" class="nav-link">Home</a></li>
+                    <li class="has-children">
+                      <a href="" class="nav-link">Branches</a>
+                      <ul class="dropdown">
+                        <li><a href="https://en.wikipedia.org/wiki/Thiruvananthapuram" class="nav-link">Thiruvananthapuram</a></li>
+                        <li><a href="https://en.wikipedia.org/wiki/Kollam" class="nav-link">Kollam</a></li>
+                        <li><a href="https://en.wikipedia.org/wiki/Pathanamthitta" class="nav-link">Pathanamthitta</a></li>
+                        <li><a href="https://en.wikipedia.org/wiki/Alappuzha" class="nav-link">Alappuzha</a></li>
+                        <li><a href="https://en.wikipedia.org/wiki/Kottayam" class="nav-link">Kottayam</a></li>
+                        <li><a href="https://en.wikipedia.org/wiki/Kochi" class="nav-link">Kochi</a></li>
+                      </ul>
+                    </li>
+                    <li> <a href="{% url 'main:home' %}" class="nav-link">About Us</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'details:detail'%}" class="nav-link">My Accout</a></li>
+                    <li><a href="{% url 'credentials:logout' %}">Logout</a></li>
+                    {% else %}
+                    {% endif %}
+                    
+                  </ul>
+                </nav>
+              </div>
+              
+    
+    
+              <div class="col-6 d-inline-block d-xl-none ml-md-0 py-3 text-end" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle float-right"><span class="icon-menu h3"></span></a></div>
+    
+            </div>
+          </div>
+          
+        </header>
+
+        <section class="site-section" id="form-section">
+            <div class="container">
+                <div class="row">
+                  <div class="col-md-12 mb-5">
+        
+                    <form action="#" class="p-5 bg-white">
+                      
+                      <h2 class="h4 text-black mb-5">Account Opening Form</h2> 
+        
+                      <div class="row form-group">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                          <label class="text-black" for="fname">Full Name</label>
+                          <input type="text" id="fname" class="form-control">
+                        </div>
+                        <div class="col-md-6">
+                          <label class="text-black" for="lname">Age</label>
+                          <input type="text" id="lname" class="form-control">
+                        </div>
+                      </div>
+                      <div class="row form-group">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                          <label class="text-black" for="fname">Date Of Birth</label>
+                          <input type="date" id="fname" class="form-control">
+                        </div>
+                        <div class="col-md-6">
+                          <label class="text-black" for="gender">Gender</label>
+                          <select name="gender" id="gender" class="form-control">
+                            <option selected> -- Select Gender -- </option>
+                            <option >Male</option>
+                            <option >Female</option>
+                          </select>
+                        </div>
+                      </div>
+        
+                      <div class="row form-group">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                          <label class="text-black" for="fname">Email</label>
+                          <input type="email" id="fname" class="form-control">
+                        </div>
+                        <div class="col-md-6">
+                          <label class="text-black" for="lname">Phone No</label>
+                          <input type="text" id="lname" class="form-control">
+                        </div>
+                      </div>
+                      <div class="row form-group">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                          <label class="text-black" for="fname">Address</label>
+                          <input type="text" id="fname" class="form-control">
+                        </div>
+                        <div class="col-md-6">
+                          <label class="text-black" for="lname">Address 2</label>
+                          <input type="text" id="lname" class="form-control">
+                        </div>
+                      </div>
+  
+                      <div class="row form-group">
+                        <div class="col-md-6">
+                          <label class="text-black" for="district">District</label>
+                          <select name="select1" id="select1" class="form-control">
+                            <option selected> -- Select District -- </option>
+                          </select>
+                        </div>
+                        <div class="col-md-6">
+                          <label class="text-black" for="branch">Branch</label>
+                          <select name="select2" id="select2" class="form-control">
+                            <option selected> -- Select Branch -- </option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="row form-group py-3">
+                        <div class="col-md-4">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label text-black" for="defaultCheck1">
+                             Debit Card
+                            </label>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label text-black" for="defaultCheck1">
+                             Credit Card
+                            </label>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label text-black" for="defaultCheck1">
+                             Cheque Book
+                            </label>
+                        </div>
+                        
+                      </div>
+        
+                      <div class="row form-group">
+                        <div class="col-md-12">
+                          <input type="submit" value="Submit" class="btn btn-primary btn-md text-white">
+                        </div>
+                      </div>
+        
+          
+                    </form>
+                  </div>
+                </div>
+            </div>
+        </section>   
+      </div>
+       <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+       <script src="{% static 'js/jquery-ui.js' %}"></script>
+       <script src="{% static 'js/popper.min.js' %}"></script>
+       <script src="{% static 'js/bootstrap.min.js' %}"></script>
+       <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+       <script src="{% static 'js/jquery.countdown.min.js' %}"></script>
+       <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+       <script src="{% static 'js/aos.js' %}"></script>
+       <script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
+       <script src="{% static 'js/jquery.sticky.js' %}"></script>
+       <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+                 
+                
+       <script src="{% static 'js/main.js' %}"></script>
+       <script src="{% static 'js/forms.js' %}"></script>
+
+    
+
+  </body>
+</html>

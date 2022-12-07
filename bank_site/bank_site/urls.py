@@ -23,6 +23,7 @@ urlpatterns = [
     path('home/', include('home.urls')),
     path("credentials/", include('credentials.urls')),
     path("accout/", include('details.urls')),
+    path("openaccout/", include('forms.urls')),
 ]
 
 if settings.DEBUG:

@@ -56,14 +56,14 @@
         <div class="row align-items-center">
           
           <div class="col-6 col-xl-2">
-            <h1 class="mb-0 site-logo"><a href="index.html" class="h2 mb-0">HooBank<span class="text-primary">.</span> </a></h1>
+            <h1 class="mb-0 site-logo"><a href="{% url 'main:home' %}" class="h2 mb-0">HooBank<span class="text-primary">.</span> </a></h1>
           </div>
 
           <div class="col-12 col-md-10 d-none d-xl-block">
             <nav class="site-navigation position-relative text-end" role="navigation">
 
               <ul class="site-menu main-menu js-clone-nav ml-auto d-lg-block">
-                <li><a href="#home-section" class="nav-link">Home</a></li>
+                <li><a href="{% url 'main:home' %}" class="nav-link">Home</a></li>
                 <li class="has-children">
                   <a href="" class="nav-link">Branches</a>
                   <ul class="dropdown">
@@ -335,57 +335,7 @@
             </p>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-12 mb-5">
-
-            <form action="#" class="p-5 bg-white">
-              
-              <h2 class="h4 text-black mb-5">Contact Form</h2> 
-
-              <div class="row form-group">
-                <div class="col-md-6 mb-3 mb-md-0">
-                  <label class="text-black" for="fname">First Name</label>
-                  <input type="text" id="fname" class="form-control">
-                </div>
-                <div class="col-md-6">
-                  <label class="text-black" for="lname">Last Name</label>
-                  <input type="text" id="lname" class="form-control">
-                </div>
-              </div>
-
-              <div class="row form-group">
-                
-                <div class="col-md-12">
-                  <label class="text-black" for="email">Email</label> 
-                  <input type="email" id="email" class="form-control">
-                </div>
-              </div>
-
-              <div class="row form-group">
-                
-                <div class="col-md-12">
-                  <label class="text-black" for="subject">Subject</label> 
-                  <input type="subject" id="subject" class="form-control">
-                </div>
-              </div>
-
-              <div class="row form-group">
-                <div class="col-md-12">
-                  <label class="text-black" for="message">Message</label> 
-                  <textarea name="message" id="message" cols="30" rows="7" class="form-control" placeholder="Write your notes or questions here..."></textarea>
-                </div>
-              </div>
-
-              <div class="row form-group mt-2">
-                <div class="col-md-12">
-                  <input type="submit" value="Send Message" class="btn btn-primary btn-md text-white">
-                </div>
-              </div>
-
-  
-            </form>
-          </div>
-          
+      
         </div>
       </div>
     </section>
