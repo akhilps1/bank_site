@@ -63,11 +63,9 @@
     
                   <ul class="site-menu main-menu js-clone-nav ml-auto d-lg-block">
                     {% if user.is_authenticated %}
-                    <li><a href="{% url 'details:detail'%}" class="nav-link">My Accout</a></li>
-                    <li><a href="{% url 'credentials:logout' %}">Logout</a></li>
+                    <li><a  class="text-uppercase" href="" class="nav-link">{{user}}</a></li>
+                    <li><a  class="text-uppercase" href="{% url 'credentials:logout' %}">Logout</a></li>
                     {% else %}
-                    <li><a href="{% url 'credentials:register' %}" class="nav-link">Register Now</a></li>
-                    <li><a href="{% url 'credentials:login' %}" >Login</a></li>
                     {% endif %}
                     
                   </ul>
@@ -86,9 +84,9 @@
             <div class="row align-items-center justify-content-center">
               
               <div class="col-md-10 mt-lg-5 text-center">
-                <h1 class="text-uppercase" data-aos="fade-up">OPEN YOUR ACCOUNT</h1>
-                <p class="mb-5 desc"  data-aos="fade-up" data-aos-delay="100">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae minima delectus accusamus accusantium deleniti libero excepturi porro illo.</p>
-                <a href="{% url 'forms:open_account'%}" data-aos="fade-up" class="btn  btn-primary mr-2 mb-2">Open An Account</a>
+                <h1 class=" text-md" data-aos="fade-up">Application Submitted.</h1>
+                <p class="mb-5 desc"  data-aos="fade-up" data-aos-delay="100">Your application submitted successfully. Once it approved you will receive an confirmation email.</p>
+                <a href="{% url 'credentials:logout' %}" data-aos="fade-up" class="btn  btn-primary mr-2 mb-2">Logout</a>
               </div>
             </div>
             

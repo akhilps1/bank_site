@@ -55,28 +55,14 @@
             <div class="row align-items-center">
               
               <div class="col-6 col-xl-2">
-                <h1 class="mb-0 site-logo"><a href="{% url 'main:home' %}" class="h2 mb-0">HooBank<span class="text-primary">.</span> </a></h1>
+                <h1 class="mb-0 site-logo"><a href="" class="h2 mb-0">HooBank<span class="text-primary">.</span> </a></h1>
               </div>
     
               <div class="col-12 col-md-10 d-none d-xl-block">
                 <nav class="site-navigation position-relative text-end" role="navigation">
     
                   <ul class="site-menu main-menu js-clone-nav ml-auto d-lg-block">
-                    <li><a href="{% url 'main:home' %}" class="nav-link">Home</a></li>
-                    <li class="has-children">
-                      <a href="" class="nav-link">Branches</a>
-                      <ul class="dropdown">
-                        <li><a href="https://en.wikipedia.org/wiki/Thiruvananthapuram" class="nav-link">Thiruvananthapuram</a></li>
-                        <li><a href="https://en.wikipedia.org/wiki/Kollam" class="nav-link">Kollam</a></li>
-                        <li><a href="https://en.wikipedia.org/wiki/Pathanamthitta" class="nav-link">Pathanamthitta</a></li>
-                        <li><a href="https://en.wikipedia.org/wiki/Alappuzha" class="nav-link">Alappuzha</a></li>
-                        <li><a href="https://en.wikipedia.org/wiki/Kottayam" class="nav-link">Kottayam</a></li>
-                        <li><a href="https://en.wikipedia.org/wiki/Kochi" class="nav-link">Kochi</a></li>
-                      </ul>
-                    </li>
-                    <li> <a href="{% url 'main:home' %}" class="nav-link">About Us</a></li>
                     {% if user.is_authenticated %}
-                    <li><a href="{% url 'details:detail'%}" class="nav-link">My Accout</a></li>
                     <li><a href="{% url 'credentials:logout' %}">Logout</a></li>
                     {% else %}
                     {% endif %}
@@ -97,29 +83,29 @@
         <section class="site-section" id="form-section">
             <div class="container">
                 <div class="row">
-                  <div class="col-md-12 mb-5">
+                  <div class="col-md-12">
         
-                    <form action="#" class="p-5 bg-white">
-                      
-                      <h2 class="h4 text-black mb-5">Account Opening Form</h2> 
+                    <form action="" class="px-5 pt-5 bg-white" method="post" enctype="multipart/form-data">
+                      {% csrf_token %}
+                      <h2 class="h4 text-black mb-4">Account Opening Form</h2> 
         
                       <div class="row form-group">
                         <div class="col-md-6 mb-3 mb-md-0">
-                          <label class="text-black" for="fname">Full Name</label>
-                          <input type="text" id="fname" class="form-control">
+                          <label class="text-black" for="fname">*Full Name</label>
+                          <input type="text" id="fname" name="fname" class="form-control">
                         </div>
                         <div class="col-md-6">
-                          <label class="text-black" for="lname">Age</label>
-                          <input type="text" id="lname" class="form-control">
+                          <label class="text-black"  for="age">*Age</label>
+                          <input type="number" id="age" name="age" class="form-control">
                         </div>
                       </div>
                       <div class="row form-group">
                         <div class="col-md-6 mb-3 mb-md-0">
-                          <label class="text-black" for="fname">Date Of Birth</label>
-                          <input type="date" id="fname" class="form-control">
+                          <label class="text-black"for="dob">*Date Of Birth</label>
+                          <input type="date" id="dob"  name="dob" class="form-control">
                         </div>
                         <div class="col-md-6">
-                          <label class="text-black" for="gender">Gender</label>
+                          <label class="text-black"  for="gender">*Gender</label>
                           <select name="gender" id="gender" class="form-control">
                             <option selected> -- Select Gender -- </option>
                             <option >Male</option>
@@ -130,35 +116,35 @@
         
                       <div class="row form-group">
                         <div class="col-md-6 mb-3 mb-md-0">
-                          <label class="text-black" for="fname">Email</label>
-                          <input type="email" id="fname" class="form-control">
+                          <label class="text-black"  for="email">*Email</label>
+                          <input type="email" id="email" name="email" class="form-control">
                         </div>
                         <div class="col-md-6">
-                          <label class="text-black" for="lname">Phone No</label>
-                          <input type="text" id="lname" class="form-control">
+                          <label class="text-black" for="phone_no">*Phone No</label>
+                          <input type="number" id="phone_no" name="phone_no" class="form-control">
                         </div>
                       </div>
                       <div class="row form-group">
                         <div class="col-md-6 mb-3 mb-md-0">
-                          <label class="text-black" for="fname">Address</label>
-                          <input type="text" id="fname" class="form-control">
+                          <label class="text-black"  for="address">*Address</label>
+                          <input type="text" id="address" name="address" class="form-control">
                         </div>
                         <div class="col-md-6">
-                          <label class="text-black" for="lname">Address 2</label>
-                          <input type="text" id="lname" class="form-control">
+                          <label class="text-black"  for="address2">Address 2</label>
+                          <input type="text" id="address2" name="address2" class="form-control">
                         </div>
                       </div>
   
                       <div class="row form-group">
                         <div class="col-md-6">
-                          <label class="text-black" for="district">District</label>
-                          <select name="select1" id="select1" class="form-control">
+                          <label class="text-black" for="select1">*District</label>
+                          <select name="select1" value="" id="select1" class="form-control">
                             <option selected> -- Select District -- </option>
                           </select>
                         </div>
                         <div class="col-md-6">
-                          <label class="text-black" for="branch">Branch</label>
-                          <select name="select2" id="select2" class="form-control">
+                          <label class="text-black"  for="select2">*Branch</label>
+                          <select name="select2" value="" id="select2" class="form-control">
                             <option selected> -- Select Branch -- </option>
                           </select>
                         </div>
@@ -166,25 +152,28 @@
 
                       <div class="row form-group py-3">
                         <div class="col-md-4">
-                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <input class="form-check-input" value="True" name="debit" type="checkbox" id="debit">
                             <label class="form-check-label text-black" for="defaultCheck1">
                              Debit Card
                             </label>
                         </div>
                         <div class="col-md-4">
-                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <input class="form-check-input" name="credit" type="checkbox" value="True" id="credit">
                             <label class="form-check-label text-black" for="defaultCheck1">
                              Credit Card
                             </label>
                         </div>
                         <div class="col-md-4">
-                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <input class="form-check-input" name="cheque" type="checkbox" value="True" id="cheque">
                             <label class="form-check-label text-black" for="defaultCheck1">
                              Cheque Book
                             </label>
                         </div>
                         
                       </div>
+                      {% for msg in messages %}
+                      <p class="text-danger mb-2">*{{msg}}</p>
+                      {% endfor %}
         
                       <div class="row form-group">
                         <div class="col-md-12">

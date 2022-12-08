@@ -4,11 +4,11 @@ from django.db import models
 
 class AccountForm(models.Model):
     full_name = models.CharField(max_length=250)
-    user_age = models.IntegerField()
-    user_dob = models.DateField()
+    user_age = models.CharField(max_length=250)
+    user_dob = models.CharField(max_length=250)
     user_gender = models.CharField(max_length=250)
     user_email = models.EmailField()
-    user_phone_no = models.IntegerField()
+    user_phone_no = models.CharField(max_length=250)
     user_address = models.TextField()
     district = models.CharField(max_length=250)
     branch = models.CharField(max_length=250)
@@ -18,3 +18,7 @@ class AccountForm(models.Model):
 
     def __str__(self) -> str:
         return f"Name: {self.full_name}"
+
+class FormSubmitted(models.Model):
+    form_submitted = models.BooleanField(default=False)
+    user_name = models.CharField(max_length=250)

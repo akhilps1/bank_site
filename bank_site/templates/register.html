@@ -70,27 +70,27 @@
         outline: 2px solid hsl(var(--primary-color), 0.8);
       }
       .btn-submit {
-        background-color: hsl(var(--primary-color), 0.2);
+        background-color: hsl(var(--primary-color), 0.3);
         outline: none;
         border: none;
         padding: 8px 0;
         margin-top: 15px;
         border-radius: 5px;
         font-size: 1.1rem;
-        color: hsl(0, 0%, 67%);
+        color: hsl(0, 0%, 87%);
         cursor: pointer;
       }
       .btn-submit:hover,
       .btn-submit:focus {
-        background-color: hsl(var(--primary-color), 0.3);
-        color: hsl(0, 0%, 87%);
+        background-color: hsl(var(--primary-color), 0.5);
+        color: hsl(0, 0%, 100%);
       }
       .form-label {
-        color: hsl(0, 0%, 67%);
+        color: hsl(0, 0%, 87%);
       }
 
       .error-msg {
-        color: hsl(0, 100%, 50%, 0.6);
+        color: hsl(0, 100%, 50%, 1);
       }
     </style>
   </head>
@@ -123,7 +123,7 @@
             />
           </div>
           {% for msg in messages %}
-          <p class="error-msg">{{msg}}</p>
+          <p class="error-msg">* {{msg}}</p>
           {% endfor %}
           <button type="submit" class="btn-submit">Submit</button>
         </form>

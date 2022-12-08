@@ -1,10 +1,10 @@
 let districts = ["Thiruvananthapuram","Pathanamthitta","Alappuzha","Kottayam","Kollam","Kochi",];
-let tvpmBranchs = ["Thiruvananthapuram"];
-let pBranch =["Pathanamthitta"];
-let alpBranch = ["Alappuzha"];
-let ktymBranch = ["Kottayam"];
-let klmBranch = ["Kollam"];
-let kochBranch = ["Kochi"];
+let tvpmBranchs = ["Chirayinkeezhu","Nedumangadu","Varkala","Kattakada"];
+let pBranch =["Aranmula","Adoor","Pandalam"];
+let alpBranch = ["Alappuzha West","Ambalappuzha","Aryadu Thekku"];
+let ktymBranch = ["Kottayam", "Changanassery","Kanjirappally"];
+let klmBranch = ["Shakthikulangara","Perinad","East Kallada"];
+let kochBranch = ["Kalamassery","Aluva","Angamaly"];
 
 let select1 = document.getElementById("select1");
 let select2 = document.getElementById("select2");
